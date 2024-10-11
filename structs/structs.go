@@ -50,7 +50,7 @@ func (c *commander) GetSystemInfo() (SystemInfo, error) {
 		return SystemInfo{}, err
 	}
 
-	ip, err := getLocalIPAddress()
+	ip, err := GetLocalIPAddress()
 	if err != nil {
 		return SystemInfo{}, err
 	}
@@ -58,7 +58,7 @@ func (c *commander) GetSystemInfo() (SystemInfo, error) {
 	return SystemInfo{Hostname: hostname, IPAddress: ip}, nil
 }
 
-func getLocalIPAddress() (string, error) {
+func GetLocalIPAddress() (string, error) {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
 		return "", err

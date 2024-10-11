@@ -1,9 +1,9 @@
 package main
 
 import (
+	"cpiaa/structs"
 	"encoding/json"
 	"log"
-	"main/structs"
 	"net/http"
 )
 
