@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Move the binary to /usr/local/bin
+install -m 755 crossplatform-app /usr/local/bin/
+
+# Configure the Launch Daemon
+cp com.greenido.app.plist /Library/LaunchDaemons/
+chmod 644 /Library/LaunchDaemons/com.greenido.app.plist
+
+# Load the Launch Daemon to init the app in the OS boot.
+launchctl load /Library/LaunchDaemons/com.greenido.app.plist
